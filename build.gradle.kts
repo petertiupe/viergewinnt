@@ -1,30 +1,34 @@
 plugins {
-    kotlin("multiplatform") version "1.4.0"
-    id("dev.fritz2.fritz2-gradle") version "0.7.1"
+    id("dev.fritz2.fritz2-gradle") version "0.9.2"
 }
 
+group "de.tiupe"
+version "1.0-SNAPSHOT"
+
 repositories {
-    jcenter()
+    mavenCentral()
 }
 
 kotlin {
-    kotlin {
-        jvm()
-        js().browser()
+    jvm()
+    js(IR) {
+        browser()
+    }.binaries.executable()
 
-        sourceSets {
-            val commonMain by getting {
-                dependencies {
-                    implementation(kotlin("stdlib"))
-                }
+    sourceSets {
+        val commonMain by getting {
+            dependencies {
+                implementation("dev.fritz2:core:0.9.2")
+                // see https://components.fritz2.dev/
+                implementation("dev.fritz2:components:0.9.2")
             }
-            val jvmMain by getting {
-                dependencies {
-                }
+        }
+        val jvmMain by getting {
+            dependencies {
             }
-            val jsMain by getting {
-                dependencies {
-                }
+        }
+        val jsMain by getting {
+            dependencies {
             }
         }
     }

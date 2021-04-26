@@ -1,0 +1,26 @@
+
+
+.caption{
+    font-size: 2.5em;
+}
+
+.circle{
+    display: block;
+    height: 50px;
+    width: 50px;
+    border-radius: 50% ;
+    border: 5px solid #000;
+    margin: auto;
+    line-height: 50px;
+    text-align: center;
+}
+.smallcircle{
+    display: block;
+    height: 15px;
+    width: 15px;
+    border-radius: 50% ;
+    border: 2px solid #000;
+    margin: auto;
+    line-height: 15px;
+    text-align: center;
+}
